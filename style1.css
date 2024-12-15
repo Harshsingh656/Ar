@@ -1,0 +1,135 @@
+/* styles.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFB6C1, #FF69B4, #FF1493); /* Gradient for the background */
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Slight transparent white background for the container */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Text Effects */
+.glow-text {
+    font-size: 3.5rem;
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff4500;
+    margin-bottom: 10px;
+    animation: glow 1.5s infinite alternate;
+}
+
+.intro-message {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #555;
+}
+
+.perfume-bottle {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.perfume-bottle:hover {
+    transform: scale(1.1);
+}
+
+.perfume-image {
+    width: 150px;
+    height: auto;
+}
+
+.playlist {
+    display: none;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.playlist-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Falling Hearts Effect */
+.falling-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.falling-hearts span {
+    position: absolute;
+    top: -50px;
+    font-size: 30px;
+    color: #ff69b4;
+    animation: fall 4s infinite ease-in;
+}
+
+.falling-hearts span:nth-child(odd) {
+    animation-duration: 5s;
+}
+
+.falling-hearts span:nth-child(even) {
+    animation-duration: 6s;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ff4500, 0 0 30px #ff4500;
+    }
+    to {
+        text-shadow: 0 0 20px #ff4500, 0 0 30px #ffd700, 0 0 40px #ffd700;
+    }
+}
